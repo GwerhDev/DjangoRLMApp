@@ -4,12 +4,21 @@ body{
   background-size: cover;
   text-align: center;
   font-family: Helvetica, sans-serif;
-  font-weight: bold;
   min-height: 100vh;
 }
 
-h1,h2,h3{
+h1,h2,h3,button{
   font-family: Bebas Neue;
+}
+
+button{
+  background: linear-gradient(230deg, rgb(43, 43, 43), #000000 85%);
+  color: white;
+  font-size: 18px;
+}
+
+button:hover{
+  cursor: pointer;
 }
 
 ::-webkit-scrollbar {

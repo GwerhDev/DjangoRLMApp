@@ -22,7 +22,7 @@ def home(request):
     return render(request, 'home.html', {'data': df.to_html()})
 
 def predict(request):
-    if file.X != '' and file.Y != '':
+    if (file.X != "" and file.Y != ""):
         df = pd.read_excel(file.file_path)
 
         X = df[file.X]
