@@ -1,16 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Challenge</title>
+    <link type="text/css" href='{% static "css/style.css" %}' rel="stylesheet"/>
 </head>
 <body>
   <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
-  <h2>Tabla del archivo excel</h2>
-  {% if data %}
-      {{ data|safe }}
-  {% else %}
-      <p>No hay datos disponibles</p>
-  {% endif %}
   <form method="POST">
     {% csrf_token %}
     <p>Variable Dependiente (Y): <input type="text" name="Y" placeholder="ejemplo: y"></p>
@@ -20,5 +16,11 @@
   <form action="/" method="get">
     <button type="submit">Salir</button>
   </form>
+  <h2>Tabla del archivo excel</h2>
+  {% if data %}
+      {{ data|safe }}
+  {% else %}
+      <p>No hay datos disponibles</p>
+  {% endif %}
 </body>
 </html>
