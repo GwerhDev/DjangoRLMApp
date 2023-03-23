@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Challenge</title>
+
+</head>
+<body>
+  <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <select name="ruta">
+        {% for archivo in archivos %}
+        <option value="{{ archivo }}">{{ archivo }}</option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Seleccionar archivo">
+  </form>
+</body>
+</html>

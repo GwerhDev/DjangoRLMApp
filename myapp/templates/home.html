@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Challenge</title>
+</head>
+<body>
+  <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
+  <h2>Tabla del archivo excel</h2>
+  {% if data %}
+      {{ data|safe }}
+  {% else %}
+      <p>No hay datos disponibles</p>
+  {% endif %}
+  <form method="POST">
+    {% csrf_token %}
+    <p>Variable Dependiente (Y): <input type="text" name="Y" placeholder="ejemplo: y"></p>
+    <p>Variable(s) Independiente (X): <input type="text" name="X" placeholder="ejemplo: x1,x2,x3..."></p>
+    <button type="submit">Aplicar Regresión Lineal Múltiple</button>
+  </form>
+  <form action="/" method="get">
+    <button type="submit">Salir</button>
+  </form>
+</body>
+</html>

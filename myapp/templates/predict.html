@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict</title>
+</head>
+<body>
+  <h1>Challenge: Regresión Lineal Múltiple</h1>
+  <h2>Datos</h2>
+  <p>R2: {{r2}}</p>
+  <p>Betas estandarizados: {{beta_standardized}}</p>
+  <h2>Gráficos</h2>
+  <img src="{{ data }}" alt="My Plot">
+  <img src="{{ plot }}" alt="My Plot">
+  <form action="{% url 'home' %}" method="get">
+    <button type="submit">Atrás</button>
+  </form>
+  <form action="/" method="get">
+    <button type="submit">Salir</button>
+  </form>
+</body>
+</html>
