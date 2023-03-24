@@ -15,10 +15,15 @@ button{
   background: linear-gradient(230deg, rgb(43, 43, 43), #000000 85%);
   color: white;
   font-size: 18px;
+  transition-duration: .4s;
+  border-radius: 5px;
 }
 
 button:hover{
   cursor: pointer;
+  background: linear-gradient(230deg, rgb(201, 200, 200), #e4e4e4 85%);
+  scale: 1.01;
+  color: #000000;
 }
 
 ::-webkit-scrollbar {

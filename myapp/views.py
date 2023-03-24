@@ -5,12 +5,24 @@ import myapp.functions.my_functions as l_reg
 import myapp.misc.globals as file
 
 def index(request):
-    archivos = os.listdir("myapp/data")
+    file.file_path = ""
+    archDrv = l_reg.list_files()
+    filtered_data = [{'name': item['name'], 'id': item['id']} for item in archDrv if item['mimeType'] == 'application/vnd.google-apps.spreadsheet']
+    archivosServer = os.listdir("myapp/data")
+    archivosDrive = filtered_data
+
     if request.method == "POST":
-        ruta = request.POST.get("ruta")
-        file.file_path = "myapp/data/" + ruta
+        rutaServer = request.POST.get("rutaServer")
+        rutaDrive = request.POST.get("rutaDrive")
+        print("reqServer", rutaServer)
+
+        if rutaDrive == None:
+            file.file_path = "myapp/data/" + rutaServer
+        else:
+            print("reqDrive", rutaDrive)
+            file.file_path = l_reg.descargarDrive(rutaDrive, 'Ender 3 v2 - Costos')
         return redirect("home")
-    return render(request, "index.html", {"archivos": archivos})
+    return render(request, "index.html", {"archivosServer": archivosServer, "archivosDrive": archivosDrive})
 
 def home(request):
     if request.method == "POST":

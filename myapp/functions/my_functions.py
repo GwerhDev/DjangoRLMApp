@@ -2,6 +2,12 @@ import numpy as np
 import matplotlib.pyplot as plt
 import io
 import base64
+import os
+from google.oauth2.credentials import Credentials
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+
+from django.conf import settings
 
 def standardize(X):
   X_mean = np.mean(X, axis=0)
@@ -86,3 +92,26 @@ def my_plot(Y, reg_pred, r2, beta_standardized):
   image_url = f"data:image/png;base64,{image_base64}"
 
   return image_url
+
+def get_drive_service():
+    credentials = Credentials.from_authorized_user_file(os.path.join(settings.GOOGLE_APPLICATION_CREDENTIALS))
+    return build('drive', 'v3', credentials=credentials)
+
+
+def list_files():
+  try:
+      drive_service = get_drive_service()
+      query = f"'{settings.GOOGLE_DRIVE_FOLDER_ID}' in parents"
+      results = drive_service.files().list(q=query).execute()
+      items = results.get('files', [])
+      return items
+  except HttpError as error:
+      print(f'An error occurred: {error}')
+      return []
+  
+def descargarDrive(file_id, sheet_name):
+  creds = Credentials.from_authorized_user_file(os.path.join(settings.GOOGLE_APPLICATION_CREDENTIALS))
+  service = build('sheets', 'v4', credentials=creds)  
+  request = service.spreadsheets().values().get(spreadsheetId=file_id, range=sheet_name)
+  content = request.execute()
+  return content
