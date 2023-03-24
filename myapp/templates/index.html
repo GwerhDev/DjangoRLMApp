@@ -6,6 +6,7 @@
   <link type="text/css" href='{% static "css/style.css" %}' rel="stylesheet"/>
 </head>
 <body>
+    <img src='{% static "img/logo.png" %}' alt="logo" height="100px">
   <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
   <h2>Server</h2>
   <form method="POST" name="server">
@@ -18,8 +19,8 @@
     <button value="Seleccionar archivo">Seleccionar archivo del Servidor</button>
   </form>
 
-  <h2>Drive</h2>
-  <form method="POST" name="drive" >
+  <!-- <h2>Drive</h2> -->
+  <!-- <form method="POST" name="drive" >
     {% csrf_token %}
     <select name="rutaDrive">
         {% for archivo in archivosDrive %}
@@ -27,6 +28,6 @@
         {% endfor %}
     </select>
     <button value="Seleccionar archivo">Seleccionar archivo del Drive</button>
-  </form>
+  </form> -->
 </body>
 </html>
