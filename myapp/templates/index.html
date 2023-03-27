@@ -1,33 +1,33 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Challenge</title>
-  <link type="text/css" href='{% static "css/style.css" %}' rel="stylesheet"/>
-</head>
-<body>
-    <img src='{% static "img/logo.png" %}' alt="logo" height="100px">
-  <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
-  <h2>Server</h2>
-  <form method="POST" name="server">
-    {% csrf_token %}
-    <select name="rutaServer">
-        {% for archivo in archivosServer %}
-        <option value="{{ archivo }}">{{ archivo }}</option>
-        {% endfor %}
-    </select>
-    <button value="Seleccionar archivo">Seleccionar archivo del Servidor</button>
-  </form>
+  <head>
+    <title>Challenge</title>
+    <link type="text/css" href='{% static "css/style.css" %}' rel="stylesheet"/>
+  </head>
+  <body>
+      <img src='{% static "img/logo.png" %}' alt="logo" height="100px">
+    <h1 class="title">Challenge: Regresión Lineal Múltiple</h1>
+    <h2>Server</h2>
+    <form method="POST" name="server">
+      {% csrf_token %}
+      <select name="rutaServer">
+          {% for archivo in archivosServer %}
+          <option value="{{ archivo }}">{{ archivo }}</option>
+          {% endfor %}
+      </select>
+      <button value="Seleccionar archivo">Seleccionar archivo del Servidor</button>
+    </form>
 
-  <!-- <h2>Drive</h2>
-  <form method="POST" name="drive" >
-    {% csrf_token %}
-    <select name="rutaDrive">
-        {% for archivo in archivosDrive %}
-        <option value="{{ archivo.id }}">{{ archivo.name }}</option>
-        {% endfor %}
-    </select>
-    <button value="Seleccionar archivo">Seleccionar archivo del Drive</button>
-  </form> -->
-</body>
+    <!-- <h2>Drive</h2>
+    <form method="POST" name="drive" >
+      {% csrf_token %}
+      <select name="rutaDrive">
+          {% for archivo in archivosDrive %}
+          <option value="{{ archivo.id }}">{{ archivo.name }}</option>
+          {% endfor %}
+      </select>
+      <button value="Seleccionar archivo">Seleccionar archivo del Drive</button>
+    </form> -->
+  </body>
 </html>
