@@ -67,10 +67,10 @@ def my_data(X, Y):
 
   return image_url
 
-def my_plot(Y, reg_pred, r2, beta_standardized):
+def my_plot(X, Y, reg_pred, r2, beta_standardized):
   fig, ax = plt.subplots()
   ax.scatter(Y, reg_pred, label='Predicciones')
-  ax.plot([Y.min(), Y.max()], [Y.min(), Y.max()], 'k--', lw=2, label='Regresión Lineal')
+  ax.plot([reg_pred.min(), reg_pred.max()], [reg_pred.min(), reg_pred.max()], linestyle='-', lw=2, label='Regresión Lineal', color='red')
   ax.set_xlabel('Valores observados')
   ax.set_ylabel('Valores predichos')
   ax.set_title('Regresión Lineal Múltiple')
@@ -79,8 +79,8 @@ def my_plot(Y, reg_pred, r2, beta_standardized):
   textstr = '\n'.join((
     r'$R^2=%.3f$' % (r2),
     r'$\beta_{standardized}=$' + str(beta_standardized)))
-  props = dict(boxstyle='round', facecolor='wheat', alpha=0.5)
-  ax.text(0.20, 0.15, textstr, transform=ax.transAxes, fontsize=8,
+  props = dict(boxstyle='round', facecolor='wheat', alpha=0.9)
+  ax.text(0.20, 0.15, textstr, transform=ax.transAxes, fontsize=7,
     verticalalignment='top', bbox=props)
 
   buffer = io.BytesIO()

@@ -47,7 +47,7 @@ def predict(request):
         r2 = l_reg.r_squared(X, Y)
 
         data = l_reg.my_data(X, Y)
-        plot = l_reg.my_plot(Y, reg_pred, r2, beta_standardized)
+        plot = l_reg.my_plot(X, Y, reg_pred, r2, beta_standardized)
     else:
         r2 = "error"
         beta_standardized = "error"
