@@ -4,4 +4,4 @@
   publish = "public/"
 
   [build.environment]
-  DJANGO_SETTINGS_MODULE = "djangoproject.settings"
+  DJANGO_SETTINGS_MODULE = "myapp.settings"
