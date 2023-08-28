@@ -1,7 +1,7 @@
 
   [build]
   command = "python manage.py collectstatic --noinput"
-  publish = "static/"
+  publish = "myapp/static"
 
   [build.environment]
   DJANGO_SETTINGS_MODULE = "djangoproject.settings"
