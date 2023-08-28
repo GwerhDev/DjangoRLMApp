@@ -1,0 +1,54 @@
+body{
+  background: linear-gradient(320deg, #e9e9e9fd, #d3d3d3 85%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-family: Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+h1,h2,h3,button{
+  font-family: Bebas Neue;
+}
+
+button{
+  background: linear-gradient(230deg, rgb(43, 43, 43), #000000 85%);
+  color: white;
+  font-size: 18px;
+  transition-duration: .4s;
+  border-radius: 5px;
+}
+
+button:hover{
+  cursor: pointer;
+  background: linear-gradient(230deg, rgb(201, 200, 200), #e4e4e4 85%);
+  scale: 1.01;
+  color: #000000;
+}
+
+::-webkit-scrollbar {
+  z-index: 9999999;
+  width: 10px;
+  height: 100%;
+  position: absolute;
+}
+::-webkit-scrollbar-track {
+  background: linear-gradient(168deg, rgb(72, 72, 72) 20% , #171717 120%);
+}
+::-webkit-scrollbar-thumb {
+  background: #fff2;
+  border-radius: 1px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff4;
+}
+
+#buttons_list{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+#buttons_list>li{
+  margin-right: 15px;
+}
