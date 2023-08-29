@@ -21,7 +21,7 @@ python manage.py runserver
 
 ## Uso
 - En la Landing Page, selecciona un archivo xlsx.
-- Al entrar, se visualizará el contenido del archivo seleccionado y podrás ingresar una variable dependiente y múltiples variables independientes del archivo. 
+- A continuación, se visualizará el contenido del archivo seleccionado y podrás ingresar una variable dependiente y múltiples variables independientes del archivo. 
 - Dar click al botón "Aplicar Regresión Lineal Múltiple"".
 - Se graficarán los datos y predicciones del modelo.
 
