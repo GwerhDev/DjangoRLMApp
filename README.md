@@ -9,7 +9,7 @@ Existe una versión [online](djangorlmapp.netlify.app) en Netlify.
 
 ## Instalación
 
-Utilizar [pip](https://pypi.org/project/pip/) v9.5.0 o superior para instalar las dependencias.
+Utilizar [pip](https://pypi.org/project/pip/) para instalar las dependencias.
 
 ```bash
 pip install -r requirements.txt
