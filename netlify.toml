@@ -1,0 +1,5 @@
+[build]
+command = "python manage.py"
+publish = ""
+[build.environment]
+DJANGO_SETTINGS_MODULE = "djangoproject.settings"
