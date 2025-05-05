@@ -89,3 +89,4 @@ Werkzeug==2.3.3
 wrapt==1.14.1
 zipp==3.15.0
 gunicorn
+whitenoise==6.9.0
