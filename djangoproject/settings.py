@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-vn_ow#h6cf1pd6wewoqo#1sy1h8ac=hvw+&$zx9^@j=5dyd=-c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+ALLOWED_HOSTS = ['*']
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -51,7 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoproject.urls'
@@ -144,7 +146,3 @@ STATICS_DIRS = os.path.join(BASE_DIR, 'myapp/static/')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-ALLOWED_HOSTS = ['rlm-app.up.railway.app']
-
-CSRF_TRUSTED_ORIGINS = ['https://rlm-app.up.railway.app']
