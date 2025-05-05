@@ -109,9 +109,9 @@ def list_files():
       print(f'An error occurred: {error}')
       return []
   
-def descargarDrive(file_id, sheet_name):
-  creds = Credentials.from_authorized_user_file(os.path.join(settings.GOOGLE_APPLICATION_CREDENTIALS))
-  service = build('sheets', 'v4', credentials=creds)  
-  request = service.spreadsheets().values().get(spreadsheetId=file_id, range=sheet_name)
-  content = request.execute()
-  return content
+# def descargarDrive(file_id, sheet_name):
+#  creds = Credentials.from_authorized_user_file(os.path.join(settings.GOOGLE_APPLICATION_CREDENTIALS))
+#  service = build('sheets', 'v4', credentials=creds)  
+#  request = service.spreadsheets().values().get(spreadsheetId=file_id, range=sheet_name)
+#  content = request.execute()
+#  return content
