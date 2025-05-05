@@ -145,10 +145,6 @@ STATICS_DIRS = os.path.join(BASE_DIR, 'myapp/static/')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GOOGLE_APPLICATION_CREDENTIALS = 'myapp/misc/credentials.json'
-
-GOOGLE_DRIVE_FOLDER_ID = '1K7iobmNtzh7pSe4YNoHKkQ47AtHyX7YZ'
-
 ALLOWED_HOSTS = ['rlm-app.up.railway.app']
 
 CSRF_TRUSTED_ORIGINS = ['https://rlm-app.up.railway.app']
