@@ -39,7 +39,7 @@ MarkupSafe==2.1.2
 matplotlib==3.7.1
 ml-dtypes==0.1.0
 moderngl==5.8.2
-numpy==1.23.5
+numpy>=1.24.3
 numpy-stl==3.0.1
 oauthlib==3.2.2
 objloader==0.2.0
