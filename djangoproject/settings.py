@@ -25,9 +25,6 @@ SECRET_KEY = 'django-insecure-vn_ow#h6cf1pd6wewoqo#1sy1h8ac=hvw+&$zx9^@j=5dyd=-c
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -54,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'djangoproject.urls'
@@ -150,3 +148,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 GOOGLE_APPLICATION_CREDENTIALS = 'myapp/misc/credentials.json'
 
 GOOGLE_DRIVE_FOLDER_ID = '1K7iobmNtzh7pSe4YNoHKkQ47AtHyX7YZ'
+
+ALLOWED_HOSTS = ['rlm-app.up.railway.app']
+
+CSRF_TRUSTED_ORIGINS = ['https://rlm-app.up.railway.app']
